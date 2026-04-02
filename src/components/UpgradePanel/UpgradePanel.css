@@ -1,0 +1,65 @@
+.upgrade-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 12px 8px;
+  background: var(--bg-panel);
+  overflow-y: auto;
+}
+
+.upgrade-panel-title {
+  font-size: 8px;
+  color: var(--green-bright);
+  padding: 8px 4px 12px;
+  border-bottom: 1px solid var(--green-dark);
+  margin-bottom: 8px;
+}
+
+.upgrade-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 8px;
+  border: 1px solid var(--green-dark);
+  background: var(--bg-card);
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: border-color 0.1s, background 0.1s;
+}
+
+.upgrade-card:hover:not(.upgrade-card--disabled) {
+  border-color: var(--green-bright);
+  background: var(--green-dark);
+}
+
+.upgrade-card--disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.upgrade-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.upgrade-name {
+  font-size: 8px;
+  color: var(--text-main);
+}
+
+.upgrade-count {
+  font-size: 7px;
+  color: var(--green-bright);
+}
+
+.upgrade-desc {
+  font-size: 6px;
+  color: var(--text-dim);
+}
+
+.upgrade-cost {
+  font-size: 7px;
+  color: var(--gold);
+}

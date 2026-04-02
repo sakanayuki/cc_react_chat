@@ -1,0 +1,41 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  background: var(--bg-dark);
+}
+
+.app-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 20px;
+  background: var(--bg-panel);
+  border-bottom: 2px solid var(--green-mid);
+  flex-wrap: wrap;
+}
+
+.header-title {
+  font-size: 14px;
+  color: var(--green-bright);
+}
+
+.header-sub {
+  font-size: 7px;
+  color: var(--text-dim);
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 220px 1fr 280px;
+  gap: 0;
+  flex: 1;
+  min-height: 0;
+}
+
+@media (max-width: 900px) {
+  .app-main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}

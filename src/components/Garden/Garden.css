@@ -1,0 +1,164 @@
+.garden {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 32px 16px;
+  border-left: 2px solid var(--green-mid);
+  border-right: 2px solid var(--green-mid);
+  min-height: 400px;
+}
+
+/* ---- Stats ---- */
+.stats {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stats-leaves {
+  font-size: 18px;
+  color: var(--green-leaf);
+}
+
+.stats-lps {
+  font-size: 8px;
+  color: var(--text-dim);
+}
+
+.buff-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 0;
+  font-size: 7px;
+  animation: pill-pulse 1.5s ease-in-out infinite;
+}
+
+.buff-pill.positive {
+  background: var(--green-mid);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+.buff-pill.negative {
+  background: var(--red-debuff);
+  color: var(--red-light);
+  border: 1px solid var(--red-light);
+}
+
+@keyframes pill-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+/* ---- Clover ---- */
+.clover-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.clover-wrapper:active .clover {
+  transform: scale(0.92);
+}
+
+.clover {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  transition: transform 0.05s;
+}
+
+/* Four petals + stem */
+.petal {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50% 50% 50% 0;
+  background: var(--green-leaf);
+}
+
+.petal-tl {
+  top: 12px;
+  left: 12px;
+  transform: rotate(135deg);
+}
+.petal-tr {
+  top: 12px;
+  right: 12px;
+  transform: rotate(225deg);
+}
+.petal-bl {
+  bottom: 12px;
+  left: 12px;
+  transform: rotate(45deg);
+}
+.petal-br {
+  bottom: 12px;
+  right: 12px;
+  transform: rotate(315deg);
+}
+
+.clover-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--green-bright);
+  border: 2px solid var(--green-leaf);
+}
+
+.clover-stem {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 14px;
+  background: var(--green-mid);
+}
+
+/* Bounce animation — re-triggered via key prop */
+.clover--bounce {
+  animation: clover-bounce 0.25s ease-out forwards;
+}
+
+/* Shimmer (positive buff) */
+.clover--shimmer .petal,
+.clover--shimmer .clover-center {
+  animation: clover-shimmer 1s ease-in-out infinite;
+}
+
+/* Wilt (negative buff) */
+.clover--wilt {
+  animation: clover-wilt 2s ease-in-out infinite;
+}
+
+@keyframes clover-bounce {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+@keyframes clover-shimmer {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 3px var(--green-bright)); }
+  50%       { filter: brightness(1.4) drop-shadow(0 0 10px var(--gold)); }
+}
+
+@keyframes clover-wilt {
+  0%, 100% { transform: rotate(-6deg) scale(0.9); }
+  50%       { transform: rotate(6deg) scale(0.9); }
+}
+
+.clover-hint {
+  font-size: 7px;
+  color: var(--text-dim);
+  margin-top: 16px;
+}
