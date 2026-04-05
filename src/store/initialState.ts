@@ -8,7 +8,7 @@ const UPGRADES: Upgrade[] = [
     baseCost: 10,
     costMultiplier: 1.15,
     count: 0,
-    leavesPerSec: 0.1,
+    leavesPerSec: 1.0,
     clickMultiplier: 1.0,
   },
   {
@@ -18,7 +18,7 @@ const UPGRADES: Upgrade[] = [
     baseCost: 75,
     costMultiplier: 1.15,
     count: 0,
-    leavesPerSec: 0.5,
+    leavesPerSec: 5.0,
     clickMultiplier: 1.0,
   },
   {
@@ -38,7 +38,7 @@ const UPGRADES: Upgrade[] = [
     baseCost: 500,
     costMultiplier: 1.15,
     count: 0,
-    leavesPerSec: 2.0,
+    leavesPerSec: 20.0,
     clickMultiplier: 1.0,
   },
   {
@@ -48,7 +48,7 @@ const UPGRADES: Upgrade[] = [
     baseCost: 2000,
     costMultiplier: 1.2,
     count: 0,
-    leavesPerSec: 5.0,
+    leavesPerSec: 50.0,
     clickMultiplier: 1.0,
   },
   {
@@ -58,7 +58,7 @@ const UPGRADES: Upgrade[] = [
     baseCost: 10000,
     costMultiplier: 1.25,
     count: 0,
-    leavesPerSec: 20.0,
+    leavesPerSec: 200.0,
     clickMultiplier: 1.0,
   },
 ];
