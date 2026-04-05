@@ -24,12 +24,12 @@ const UPGRADES: Upgrade[] = [
   {
     id: 'fertilizer',
     name: 'ひりょう',
-    description: 'クリック2倍！',
+    description: 'クリック20倍！',
     baseCost: 100,
     costMultiplier: 1.2,
     count: 0,
     leavesPerSec: 0,
-    clickMultiplier: 2.0,
+    clickMultiplier: 20.0,
   },
   {
     id: 'bee_friend',
